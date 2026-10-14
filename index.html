@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="only light">
+<meta name="description" content="Epoxy Wonders — ručno rađena epoxy dekoracija: obeleživači za knjige, podmetači za čaše, četke za kosu i postolja za sapune.">
+<title>Epoxy Wonders — savršenstvo u svakom sloju</title>
+<link rel="icon" href="slike/logo-epoxy-wonders.png">
+<style>
+:root {
+  color-scheme: only light;
+  --bela: #ffffff;
+  --krem: #fbf7f1;
+  --linija: #ece3d6;
+  --tekst: #3b3431;
+  --tekst-blag: #6b605a;
+  --zlatna: #b08d4f;
+  --zlatna-tamna: #82652f;
+  --roze: #e8c4c2;
+  --roze-blag: #f6e7e5;
+  --serif: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+  --visina-zaglavlja: 64px;
+}
+html {
+  background: #fff;
+  overflow-x: hidden;
+  overflow-x: clip;
+  scroll-padding-top: var(--visina-zaglavlja);
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-color-scheme: dark) { html, body { background: #fff !important; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--tekst);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--zlatna-tamna); }
+a:hover { color: var(--tekst); }
+
+/* ---------- Zaglavlje ---------- */
+.zaglavlje {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, .97);
+  border-bottom: 1px solid var(--linija);
+}
+.zaglavlje-red {
+  max-width: 1120px;
+  margin: 0 auto;
+  height: var(--visina-zaglavlja);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.znak {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--tekst);
+  min-width: 0;
+}
+.znak img { width: 48px; height: 48px; }
+.znak span {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+/* skriveni checkbox — ostaje dostupan tastaturi */
+#meni {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+.hamburger {
+  width: 44px; height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--tekst);
+  transition: transform .3s ease, opacity .2s ease;
+}
+#meni:focus-visible + .hamburger { outline: 1px solid var(--zlatna); outline-offset: 2px; }
+#meni:checked + .hamburger span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+#meni:checked + .hamburger span:nth-child(2) { opacity: 0; }
+#meni:checked + .hamburger span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.meni {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px 28px;
+  background: #fff;
+  border-bottom: 1px solid var(--linija);
+}
+#meni:checked ~ nav { display: flex; }
+.meni a {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--tekst);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  letter-spacing: .06em;
+  border-bottom: 1px solid var(--linija);
+}
+.meni a:last-child { border-bottom: 0; }
+.meni a:hover, .meni a:focus-visible { color: var(--zlatna-tamna); }
+
+/* ---------- Opšte ---------- */
+.omot { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+section { padding: 72px 0; }
+.krem { background: var(--krem); }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 200; margin: 0; line-height: 1.2; }
+h2 { font-size: 2.3rem; letter-spacing: .02em; }
+h3 { font-size: 1.5rem; font-weight: 400; }
+p { margin: 0; }
+
+.ukras {
+  width: 48px; height: 1px;
+  background: var(--zlatna);
+  border: 0;
+  margin: 18px 0 22px;
+}
+.cena {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--zlatna-tamna);
+  letter-spacing: .02em;
+}
+.tacka { color: var(--roze); padding: 0 .4em; }
+
+/* ---------- Uvod ---------- */
+.uvod { padding: 48px 0 64px; text-align: center; }
+.uvod-logo { width: 220px; height: auto; margin: 0 auto; }
+.uvod h1 {
+  margin-top: 20px;
+  font-size: 2.9rem;
+  letter-spacing: .05em;
+}
+.slogan {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--zlatna-tamna);
+}
+.uvod .ukras { margin: 26px auto; background: var(--roze); width: 64px; }
+.podnaslov {
+  font-size: .82rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--tekst-blag);
+  font-weight: 400;
+}
+.recenica {
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+}
+.uvod-slika { margin: 40px auto 0; width: 100%; max-width: 520px; }
+
+/* ---------- Proizvodi ---------- */
+.proizvod { display: grid; gap: 36px; }
+.opis p + p { margin-top: 10px; }
+.galerija {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.galerija figure { margin: 0; }
+.galerija img { width: 100%; height: auto; }
+.galerija figcaption {
+  margin-top: 10px;
+  font-size: .95rem;
+  color: var(--tekst-blag);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.galerija figcaption b { font-weight: 400; color: var(--zlatna-tamna); font-family: var(--serif); font-size: 1.15rem; }
+.jedna { max-width: 420px; }
+/* cetke idu jedna ispod druge, na svim sirinama */
+.galerija.jedna-kolona { grid-template-columns: 1fr; max-width: 420px; }
+
+/* ---------- Poručivanje / Dostava ---------- */
+.kartice { display: grid; gap: 20px; margin-top: 8px; }
+.kartica {
+  background: #fff;
+  border: 1px solid var(--linija);
+  padding: 28px 24px;
+}
+.krem .kartica { background: #fff; }
+.kartica h3 { margin-bottom: 10px; }
+.kartica ul { list-style: none; margin: 0; padding: 0; }
+.kartica li { padding: 6px 0; }
+.kartica li + li { border-top: 1px solid var(--linija); }
+.kartica .oznaka {
+  display: block;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--tekst-blag);
+  font-weight: 400;
+}
+
+/* ---------- Kontakt ---------- */
+.kontakt { text-align: center; }
+.kontakt .ukras { margin-left: auto; margin-right: auto; }
+.dugme {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 32px;
+  margin-top: 8px;
+  border: 1px solid var(--zlatna);
+  color: var(--zlatna-tamna);
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: background .2s ease, color .2s ease;
+}
+.dugme:hover, .dugme:focus-visible { background: var(--roze-blag); color: var(--tekst); }
+.dugme svg { width: 20px; height: 20px; }
+
+.podnozje {
+  padding: 32px 20px;
+  text-align: center;
+  border-top: 1px solid var(--linija);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--tekst-blag);
+}
+
+/* ---------- Računar ---------- */
+@media (min-width: 760px) {
+  :root { --visina-zaglavlja: 76px; }
+  section { padding: 104px 0; }
+  .zaglavlje-red { padding: 0 40px; }
+  .omot { padding: 0 40px; }
+  .znak img { width: 56px; height: 56px; }
+  .znak span { font-size: 1.6rem; }
+  .meni { padding-bottom: 36px; }
+  .uvod { padding: 72px 0 96px; }
+  .uvod-logo { width: 280px; }
+  .uvod h1 { font-size: 4rem; }
+  .slogan { font-size: 1.55rem; }
+  .recenica { font-size: 2rem; }
+  .uvod-slika { max-width: 560px; margin-top: 56px; }
+  h2 { font-size: 2.8rem; }
+  .kartice { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 960px) {
+  .proizvod { grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
+  .proizvod .opis { position: sticky; top: calc(var(--visina-zaglavlja) + 40px); }
+  .proizvod.obrnuto { grid-template-columns: 1.5fr 1fr; }
+  .proizvod.obrnuto .opis { order: 2; }
+  .galerija.tri { grid-template-columns: 1fr 1fr; }
+  .galerija.tri figure:first-child { grid-row: span 2; }
+}
+@media (max-width: 359px) {
+  .dugme { padding: 0 16px; gap: 8px; font-size: .78rem; letter-spacing: .08em; text-align: center; }
+  .dugme svg { width: 18px; height: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hamburger span, .dugme { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="zaglavlje">
+  <div class="zaglavlje-red">
+    <a class="znak" href="#pocetak">
+      <img src="slike/logo-epoxy-wonders.png" width="361" height="361" alt="Logo Epoxy Wonders">
+      <span>Epoxy Wonders</span>
+    </a>
+    <input type="checkbox" id="meni" aria-label="Otvori ili zatvori meni">
+    <label for="meni" class="hamburger" title="Meni">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="meni" aria-label="Glavni meni">
+      <a href="#obelezivaci">Obeleživači</a>
+      <a href="#podmetaci">Podmetači</a>
+      <a href="#cetke">Četke</a>
+      <a href="#postolja">Postolja</a>
+      <a href="#porucivanje">Poručivanje</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="uvod" id="pocetak">
+    <div class="omot">
+      <img class="uvod-logo" src="slike/logo-epoxy-wonders.png" width="361" height="361" alt="Logo radionice Epoxy Wonders">
+      <h1>Epoxy Wonders</h1>
+      <p class="slogan">savršenstvo u svakom sloju</p>
+      <hr class="ukras">
+      <p class="podnaslov">Ručno rađena epoxy dekoracija</p>
+      <p class="recenica">Tvoje ideje pretvaram u umetnost</p>
+      <img class="uvod-slika" src="slike/podmetaci-beli-3.jpg" width="1220" height="1627" fetchpriority="high" alt="Set belih podmetača za čaše od epoksi smole sa zlatnim listićima">
+    </div>
+  </section>
+
+  <section class="krem" id="obelezivaci">
+    <div class="omot proizvod">
+      <div class="opis">
+        <h2>Obeleživači za knjige</h2>
+        <hr class="ukras">
+        <p>Obeleživači sa suvim cvećem, zlatnim listićima i resicama.</p>
+        <p>Mogu i personalizovani, sa natpisom po želji.</p>
+        <p class="cena">600 dinara po komadu</p>
+      </div>
+      <div class="galerija">
+        <img src="slike/obelezivaci-1.jpg" width="610" height="915" loading="lazy" alt="Obeleživači za knjige od epoksi smole sa suvim cvećem, natpisima i resicama">
+        <img src="slike/obelezivaci-2.jpg" width="610" height="915" loading="lazy" alt="Obeleživači u obliku pera sa zlatnim listićima">
+      </div>
+    </div>
+  </section>
+
+  <section id="podmetaci">
+    <div class="omot proizvod obrnuto">
+      <div class="opis">
+        <h2>Podmetači za čaše</h2>
+        <hr class="ukras">
+        <p>Setovi podmetača, sa postoljem ili bez. Broj komada, dizajn i boje biraju se po želji.</p>
+        <p class="cena">setovi od 2.600 dinara</p>
+      </div>
+      <div class="galerija">
+        <img src="slike/podmetaci-plavi.jpg" width="1220" height="1627" loading="lazy" alt="Set plavih okruglih podmetača sa srebrnim šljokicama i postoljem">
+        <img src="slike/podmetaci-braon.jpg" width="1220" height="1627" loading="lazy" alt="Set braon kvadratnih podmetača sa zlatnim listićima i postoljem">
+      </div>
+    </div>
+  </section>
+
+  <section class="krem" id="cetke">
+    <div class="omot proizvod obrnuto">
+      <div class="opis">
+        <h2>Četke za kosu</h2>
+        <hr class="ukras">
+        <p class="cena">mala sa ušima 1.800 din<span class="tacka">·</span>velika ovalna 2.000 din<span class="tacka">·</span>set „Mama i ___" 3.500 din</p>
+      </div>
+      <div class="galerija jedna-kolona">
+        <figure>
+          <img src="slike/cetka-mala-sa-usima-1.jpg" width="587" height="832" loading="lazy" alt="Mala četka za kosu sa ušima i imenom Sofija">
+          <figcaption><span>Mala sa ušima</span><b>1.800 din</b></figcaption>
+        </figure>
+        <figure>
+          <img src="slike/cetka-velika-ovalna.jpg" width="600" height="687" loading="lazy" alt="Velika ovalna četka za kosu sa žutom epoksi drškom i suvim cvećem">
+          <figcaption><span>Velika ovalna</span><b>2.000 din</b></figcaption>
+        </figure>
+        <figure>
+          <img src="slike/set-mama-i-dete.jpg" width="576" height="528" loading="lazy" alt="Set od dve četke za kosu sa natpisima Mama i (željeno ime)">
+          <figcaption><span>Set „Mama i ___"</span><b>3.500 din</b></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="postolja">
+    <div class="omot proizvod">
+      <div class="opis">
+        <h2>Postolja za sapune</h2>
+        <hr class="ukras">
+        <p>Postolja za sapune sa suvim cvećem i zlatnim listićima.</p>
+      </div>
+      <div class="galerija jedna">
+        <img src="slike/postolje-za-sapun-1.jpg" width="610" height="915" loading="lazy" alt="Postolje za sapun od epoksi smole sa suvim ružinim laticama i zlatnim listićima">
+      </div>
+    </div>
+  </section>
+
+  <section class="krem" id="porucivanje">
+    <div class="omot">
+      <h2>Poručivanje</h2>
+      <hr class="ukras">
+      <div class="kartice">
+        <div class="kartica">
+          <h3>Po tvojoj želji</h3>
+          <ul>
+            <li>Svaki komad radim po želji — broj, dizajn, boje, sa postoljem ili bez.</li>
+            <li>Dizajn po želji.</li>
+          </ul>
+        </div>
+        <div class="kartica" id="dostava">
+          <h3>Dostava i preuzimanje</h3>
+          <ul>
+            <li><span class="oznaka">Lično preuzimanje</span>Maglić</li>
+            <li><span class="oznaka">Slanje</span>Post Express ili CC poštom</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontakt" id="kontakt">
+    <div class="omot">
+      <h2>Kontakt</h2>
+      <hr class="ukras">
+      <a class="dugme" href="https://www.instagram.com/_epoxy_wonders_/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+        Poručite preko Instagrama
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="podnozje">Epoxy Wonders</footer>
+
+<script>
+/* Meni se otvara bez JS-a (checkbox). Ovo samo pri kliku na stavku:
+   prvo zatvori meni, pa tek onda skroluj do odeljka. */
+(function () {
+  var cb = document.getElementById('meni');
+  var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.meni a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var cilj = document.querySelector(a.getAttribute('href'));
+      if (!cilj) return;
+      e.preventDefault();
+      cb.checked = false;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          cilj.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+          if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+        });
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
