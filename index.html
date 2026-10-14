@@ -167,6 +167,9 @@ p { margin: 0; }
   letter-spacing: .02em;
 }
 .tacka { color: var(--roze); padding: 0 .4em; }
+/* cene cetki idu jedna ispod druge, sa crticom ispred */
+.cena.spisak { line-height: 1.85; }
+.crtica { color: var(--roze); margin-right: .5em; }
 
 /* ---------- Uvod ---------- */
 .uvod { padding: 48px 0 64px; text-align: center; }
@@ -383,7 +386,7 @@ p { margin: 0; }
       <div class="opis">
         <h2>Četke za kosu</h2>
         <hr class="ukras">
-        <p class="cena">mala sa ušima 1.800 din<span class="tacka">·</span>velika ovalna 2.000 din<span class="tacka">·</span>set „Mama i ___" 3.500 din</p>
+        <p class="cena spisak"><span class="crtica">–</span>mala sa ušima 1.800 din<br><span class="crtica">–</span>velika ovalna 2.000 din<br><span class="crtica">–</span>set „Mama i ___" 3.500 din</p>
       </div>
       <div class="galerija jedna-kolona">
         <figure>
@@ -424,7 +427,6 @@ p { margin: 0; }
           <h3>Po tvojoj želji</h3>
           <ul>
             <li>Svaki komad radim po želji — broj, dizajn, boje, sa postoljem ili bez.</li>
-            <li>Dizajn po želji.</li>
           </ul>
         </div>
         <div class="kartica" id="dostava">
